@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Transformers;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class AboutUsResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request
+     * @return array
+     */
+    public function toArray($request)
+    {
+        return [
+            "id" => $this->id,
+            'about_us_description_ar' => $this->about_us_description_ar,
+            'about_us_description_en' => $this->about_us_description_en,
+            'happy_clients' => $this->happy_clients,
+            'employees' => $this->employees,
+            'expert_developers' =>$this->expert_developers,
+            'successful_projects' => $this->successful_projects,
+            'video_ar'=>$this->videoArFullPath,
+            'video_en'=>$this->videoEnFullPath,
+        ];
+    }
+}
